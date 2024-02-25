@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Launch fullscreen when the iframe is clicked
-        iframe.addEventListener('click', function() {
-            launchFullscreen(iframe);
-        });
+        // Launch fullscreen when the iframe is loaded
+        launchFullscreen(iframe);
     };
 });
 </script>
