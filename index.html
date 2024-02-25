@@ -1,1 +1,26 @@
-<iframe src="https://onedrive.live.com/embed?resid=6EB7A6F2057E3AAA%21925&amp;authkey=!ALnUSf22DTVKT3g&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1" width="476px" height="288px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+<iframe id="officePresentation" src="https://onedrive.live.com/embed?resid=6EB7A6F2057E3AAA%21925&amp;authkey=!ALnUSf22DTVKT3g&amp;em=2&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=1" width="476px" height="288px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var iframe = document.getElementById('officePresentation');
+    iframe.onload = function() {
+        // Function to make the iframe fullscreen
+        function launchFullscreen(element) {
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.mozRequestFullScreen) { /* Firefox */
+                element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                element.webkitRequestFullscreen();
+            } else if (element.msRequestFullscreen) { /* IE/Edge */
+                element.msRequestFullscreen();
+            }
+        }
+        
+        // Launch fullscreen when the iframe is clicked
+        iframe.addEventListener('click', function() {
+            launchFullscreen(iframe);
+        });
+    };
+});
+</script>
